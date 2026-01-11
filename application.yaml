@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: https-app
+  namespace: argocd
+spec:
+  project: https-project
+  source:
+    repoURL: https://github.com/YOURUSER/argocd-https-demo.git
+    targetRevision: main
+    path: app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo-https
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
