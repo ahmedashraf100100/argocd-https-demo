@@ -4,11 +4,11 @@ metadata:
   name: https-app
   namespace: argocd
 spec:
-  project: https-project
+  project: default
   source:
-    repoURL: https://github.com/YOURUSER/argocd-https-demo.git
+    repoURL: https://github.com/ahmedashraf100100/argocd-https-demo.git
     targetRevision: main
-    path: app
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: demo-https
